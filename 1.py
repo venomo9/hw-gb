@@ -1,33 +1,33 @@
-def my_func (a, b, c):
-    if c <= a and c <= b:
-        return a + b
-    elif b <= a and b <= c:
-        return a + c
-    else:
-        return b + c
+def func (a, b):
+    if b == 0:
+        print('на ноль делить нельзя!')
+        return 1
+    print(a / b)
+    
+    return 0
 
-def validation (a, b, c):
+def validation (a, b):
+    
     error = 0
+    
     try:
         a = int(a)
         b = int(b)
-        c = int(c)
     except ValueError:
         try:
             a = float(a)
             b = float(b)
-            c = float(c)
         except ValueError:
             error = 1
             
-    return error, a, b, c
+    return error, a, b
     
 a = input('первое число ')
 b = input('второе число ')
-c = input('третье число ')
 
-error, a, b, c = validation(a, b, c)
+error, a, b = validation(a, b)
 if error:
     print('ошибка валидации чисел')
 else:
-    print(my_func(a, b, c))
+    func(a, b)
+
