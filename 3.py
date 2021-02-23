@@ -75,3 +75,5 @@ cell5.info()
 
 cell6 = cell5 / cell4
 cell6.info()
+
+print(cell6.make_order(10))
